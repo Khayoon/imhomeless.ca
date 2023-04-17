@@ -1,2 +1,3 @@
 # imhomeless.ca-backend
-the point of this website is to centralize resources, im including a chatbot API to help search all assistance available to canadians to combat homelessness 
+
+I've been homeless and the uncertainty it comes with is awful, I don't anyone to suffer like that. This might help someone center thewmselves and gather their thoughts better
