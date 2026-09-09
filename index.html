@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>imhomeless.ca — support, resources & a plan forward</title>
+<meta name="description" content="Free Canadian support app: crisis help, local resources, a private journal, and goal tracking. Works offline.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --ground:#FBFAF7; --surface:#FFFFFF; --surface-2:#F3F1EA;
+    --ink:#1B2B26; --ink-soft:#4C5A54; --line:#E3E0D6;
+    --primary:#0E6E62; --primary-ink:#0A554B; --primary-wash:#E3F0ED;
+    --accent:#C97A3D; --accent-wash:#F7EADD;
+    --crisis:#B3261E; --crisis-ink:#8C1A14; --crisis-wash:#FBE7E5;
+    --ok:#2E7D53;
+    --shadow:0 1px 2px rgba(27,43,38,.06),0 6px 20px rgba(27,43,38,.06);
+    --shadow-lift:0 2px 6px rgba(27,43,38,.10),0 14px 34px rgba(27,43,38,.12);
+    --r:14px; --r-sm:10px;
+    --display:"Fraunces",Georgia,serif;
+    --body:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#10201C; --surface:#16302A; --surface-2:#1C3A33;
+      --ink:#EAF2EE; --ink-soft:#A7BBB3; --line:#274740;
+      --primary:#4FBFAE; --primary-ink:#7FD6C8; --primary-wash:#17352F;
+      --accent:#E39A5E; --accent-wash:#33271C;
+      --crisis:#F2857C; --crisis-ink:#F8A9A2; --crisis-wash:#3A1A17;
+      --ok:#6BD79B;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+      --shadow-lift:0 2px 6px rgba(0,0,0,.4),0 14px 34px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#10201C; --surface:#16302A; --surface-2:#1C3A33;
+    --ink:#EAF2EE; --ink-soft:#A7BBB3; --line:#274740;
+    --primary:#4FBFAE; --primary-ink:#7FD6C8; --primary-wash:#17352F;
+    --accent:#E39A5E; --accent-wash:#33271C;
+    --crisis:#F2857C; --crisis-ink:#F8A9A2; --crisis-wash:#3A1A17;
+    --ok:#6BD79B;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+    --shadow-lift:0 2px 6px rgba(0,0,0,.4),0 14px 34px rgba(0,0,0,.5);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--ground);color:var(--ink);
+    font-family:var(--body);font-size:17px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.15;text-wrap:balance;margin:0}
+  a{color:var(--primary-ink)}
+  button{font-family:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--ground) 88%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;gap:12px;padding:12px 18px;max-width:760px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:9px;margin-right:auto;min-width:0}
+  .mark{width:30px;height:30px;flex:none;border-radius:8px;background:var(--primary);
+    display:grid;place-items:center;color:#fff;box-shadow:var(--shadow)}
+  .mark svg{width:18px;height:18px}
+  .brand{font-family:var(--display);font-weight:600;font-size:1.12rem;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand b{color:var(--primary-ink)}
+  .theme-btn{flex:none;width:38px;height:38px;border-radius:9px;border:1px solid var(--line);
+    background:var(--surface);color:var(--ink-soft);cursor:pointer;display:grid;place-items:center}
+  .theme-btn:hover{color:var(--ink)}
+  .help-btn{flex:none;display:inline-flex;align-items:center;gap:7px;background:var(--crisis);color:#fff;
+    border:none;border-radius:999px;padding:9px 15px;font-weight:700;font-size:.92rem;cursor:pointer;
+    box-shadow:0 2px 10px rgba(179,38,30,.35)}
+  .help-btn:hover{filter:brightness(1.05)}
+  .help-btn svg{width:15px;height:15px}
+
+  /* Tabs */
+  nav.tabs{position:sticky;top:59px;z-index:30;background:var(--ground);border-bottom:1px solid var(--line)}
+  .tabs-inner{display:flex;gap:2px;max-width:760px;margin:0 auto;padding:0 10px;overflow-x:auto;scrollbar-width:none}
+  .tabs-inner::-webkit-scrollbar{display:none}
+  .tab{flex:none;background:none;border:none;padding:13px 12px 11px;font-size:.95rem;font-weight:600;
+    color:var(--ink-soft);cursor:pointer;border-bottom:2.5px solid transparent;white-space:nowrap;display:flex;align-items:center;gap:7px}
+  .tab svg{width:16px;height:16px}
+  .tab[aria-selected="true"]{color:var(--primary-ink);border-bottom-color:var(--primary)}
+  .tab:hover{color:var(--ink)}
+
+  main{padding:22px 0 90px}
+  .panel[hidden]{display:none}
+  .panel{animation:rise .3s ease}
+  @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.panel{animation:none}}
+
+  .lead{font-size:.96rem;color:var(--ink-soft);margin:2px 0 20px;max-width:60ch}
+  .section-h{font-size:1.02rem;letter-spacing:.04em;text-transform:uppercase;font-family:var(--body);
+    font-weight:700;color:var(--ink-soft);margin:26px 0 12px;display:flex;align-items:center;gap:9px}
+  .section-h::after{content:"";height:1px;flex:1;background:var(--line)}
+
+  /* Crisis strip */
+  .crisis-strip{background:var(--crisis-wash);border:1px solid color-mix(in srgb,var(--crisis) 30%,var(--line));
+    border-radius:var(--r);padding:16px 16px 6px;margin-bottom:8px}
+  .crisis-strip h2{font-size:1.15rem;color:var(--crisis-ink);display:flex;align-items:center;gap:9px}
+  .crisis-strip h2 svg{width:19px;height:19px}
+  .crisis-strip p{margin:6px 0 12px;font-size:.9rem;color:var(--ink-soft)}
+  .call-row{display:grid;gap:9px;padding-bottom:12px}
+  .call{display:flex;align-items:center;gap:13px;background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--r-sm);padding:12px 14px;text-decoration:none;color:inherit;box-shadow:var(--shadow)}
+  .call:hover{box-shadow:var(--shadow-lift);transform:translateY(-1px)}
+  .call{transition:transform .12s ease,box-shadow .12s ease}
+  .call .ic{width:40px;height:40px;flex:none;border-radius:10px;background:var(--crisis-wash);color:var(--crisis-ink);
+    display:grid;place-items:center;font-weight:700}
+  .call .ic svg{width:20px;height:20px}
+  .call .t{min-width:0;flex:1}
+  .call .t b{display:block;font-size:1rem;line-height:1.2}
+  .call .t span{display:block;font-size:.83rem;color:var(--ink-soft)}
+  .call .num{font-weight:700;color:var(--primary-ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  /* Filter chips */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 18px}
+  .chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+    font-size:.88rem;font-weight:600;color:var(--ink-soft);cursor:pointer}
+  .chip[aria-pressed="true"]{background:var(--primary);color:#fff;border-color:var(--primary)}
+  .chip:hover{color:var(--ink)}
+  .chip[aria-pressed="true"]:hover{color:#fff}
+
+  /* Resource cards */
+  .res-grid{display:grid;gap:12px}
+  .res{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px;box-shadow:var(--shadow)}
+  .res-top{display:flex;align-items:flex-start;gap:12px}
+  .res .cat-ic{width:38px;height:38px;flex:none;border-radius:10px;background:var(--primary-wash);color:var(--primary-ink);display:grid;place-items:center}
+  .res .cat-ic svg{width:19px;height:19px}
+  .res h3{font-size:1.06rem;font-family:var(--body);font-weight:700}
+  .res .tag{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-top:1px}
+  .res p{margin:9px 0 0;font-size:.92rem;color:var(--ink-soft)}
+  .res-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px}
+  .btn{display:inline-flex;align-items:center;gap:7px;border-radius:9px;padding:9px 14px;font-size:.9rem;
+    font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent}
+  .btn svg{width:15px;height:15px}
+  .btn-primary{background:var(--primary);color:#fff}
+  .btn-primary:hover{filter:brightness(1.06)}
+  .btn-ghost{background:var(--surface-2);color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{background:var(--line)}
+
+  /* Generic card + forms */
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+  label.fl{display:block;font-size:.82rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 6px}
+  textarea,input[type=text],input[type=date],select{
+    width:100%;font-family:inherit;font-size:1rem;color:var(--ink);background:var(--ground);
+    border:1px solid var(--line);border-radius:var(--r-sm);padding:11px 12px}
+  textarea{min-height:96px;resize:vertical;line-height:1.5}
+  textarea:focus,input:focus,select:focus{outline:2px solid var(--primary);outline-offset:1px;border-color:var(--primary)}
+  .row{display:flex;gap:10px;flex-wrap:wrap}
+  .row>*{flex:1;min-width:150px}
+  .mt{margin-top:13px}
+
+  .entry{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--primary);
+    border-radius:var(--r-sm);padding:13px 15px;box-shadow:var(--shadow)}
+  .entry .meta{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:5px}
+  .entry .meta time{font-size:.8rem;color:var(--ink-soft);font-weight:600}
+  .entry p{margin:0;white-space:pre-wrap;font-size:.96rem}
+  .icon-btn{background:none;border:none;color:var(--ink-soft);cursor:pointer;padding:5px;border-radius:7px;display:grid;place-items:center}
+  .icon-btn:hover{color:var(--crisis);background:var(--crisis-wash)}
+  .icon-btn svg{width:16px;height:16px}
+
+  .goal{display:flex;align-items:flex-start;gap:12px;background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--r-sm);padding:12px 14px;box-shadow:var(--shadow)}
+  .goal .cb{flex:none;width:24px;height:24px;margin-top:1px;border:2px solid var(--line);border-radius:7px;
+    background:var(--ground);cursor:pointer;display:grid;place-items:center;color:#fff}
+  .goal .cb svg{width:15px;height:15px;opacity:0}
+  .goal.done .cb{background:var(--ok);border-color:var(--ok)}
+  .goal.done .cb svg{opacity:1}
+  .goal .g-txt{flex:1;min-width:0}
+  .goal .g-txt b{font-weight:600}
+  .goal.done .g-txt b{text-decoration:line-through;color:var(--ink-soft)}
+  .goal .g-txt span{display:block;font-size:.78rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+
+  .rem{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--r-sm);padding:12px 14px;box-shadow:var(--shadow)}
+  .rem .d{flex:none;text-align:center;width:52px;background:var(--accent-wash);border-radius:9px;padding:6px 0}
+  .rem .d b{display:block;font-size:1.15rem;font-weight:700;line-height:1;color:var(--accent)}
+  .rem .d span{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
+  .rem .r-txt{flex:1;min-width:0}
+  .rem .r-txt b{font-weight:600}
+  .rem .r-txt span{display:block;font-size:.82rem;color:var(--ink-soft)}
+  .rem.past{opacity:.55}
+
+  .empty{text-align:center;color:var(--ink-soft);padding:26px 16px;border:1px dashed var(--line);border-radius:var(--r);font-size:.92rem}
+  .stack{display:grid;gap:11px}
+
+  .note{font-size:.82rem;color:var(--ink-soft);background:var(--primary-wash);border-radius:var(--r-sm);
+    padding:11px 13px;display:flex;gap:9px;align-items:flex-start}
+  .note svg{width:16px;height:16px;flex:none;margin-top:2px;color:var(--primary-ink)}
+  .privacy{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--ink-soft);margin-bottom:14px}
+  .privacy svg{width:15px;height:15px;color:var(--ok)}
+
+  footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--ink-soft);font-size:.82rem}
+  footer .wrap{display:grid;gap:6px}
+  .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(80px);
+    background:var(--ink);color:var(--ground);padding:11px 18px;border-radius:999px;font-size:.9rem;font-weight:600;
+    box-shadow:var(--shadow-lift);z-index:80;opacity:0;transition:transform .3s ease,opacity .3s ease;pointer-events:none}
+  .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+  .hero{margin-bottom:6px}
+  .hero h1{font-size:clamp(1.7rem,6vw,2.3rem);letter-spacing:-.02em}
+  .hero .k{color:var(--primary-ink)}
+  @media(min-width:620px){.res-grid{grid-template-columns:1fr 1fr}.res.wide{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" style="position:absolute;left:-999px">Skip to content</a>
+<header>
+  <div class="bar">
+    <div class="logo">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></span>
+      <span class="brand">imhomeless<b>.ca</b></span>
+    </div>
+    <button class="help-btn" onclick="go('support')" aria-label="Get help now">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Get help now
+    </button>
+    <button class="theme-btn" id="themeBtn" aria-label="Switch light or dark theme"></button>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <div class="tabs-inner" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-tab="resources"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Resources</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="journal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>Journal</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="goals"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5" fill="currentColor"/></svg>Goals</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="reminders"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>Reminders</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="support"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Support</button>
+  </div>
+</nav>
+
+<main id="main">
+  <!-- RESOURCES -->
+  <section class="panel wrap" id="p-resources" role="tabpanel">
+    <div class="hero">
+      <h1>You deserve <span class="k">a safe place</span> and a way forward.</h1>
+    </div>
+    <p class="lead">Find shelters, food, health care, and income support near you — plus a private space to gather your thoughts and set goals. Everything here works offline once loaded.</p>
+
+    <div class="crisis-strip">
+      <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>If you need help right now</h2>
+      <p>These lines are free, confidential, and open 24/7 across Canada.</p>
+      <div class="call-row">
+        <a class="call" href="tel:911">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg></span>
+          <span class="t"><b>Emergency</b><span>Danger to life or safety</span></span>
+          <span class="num">911</span>
+        </a>
+        <a class="call" href="tel:988">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l9 9 9-9a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+          <span class="t"><b>Suicide Crisis Helpline</b><span>Call or text, any time</span></span>
+          <span class="num">988</span>
+        </a>
+        <a class="call" href="tel:211">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span>
+          <span class="t"><b>211 — find local help</b><span>Shelters, food & services near you</span></span>
+          <span class="num">2-1-1</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="section-h">Resource directory</div>
+    <div class="chips" id="chips" role="group" aria-label="Filter resources"></div>
+    <div class="res-grid" id="resGrid"></div>
+    <div class="note mt">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <span>Listings point to national services and official locators, which then connect you to the nearest location. Dialing <b>2-1-1</b> is the fastest way to reach a real person who knows what's available in your community.</span>
+    </div>
+  </section>
+
+  <!-- JOURNAL -->
+  <section class="panel wrap" id="p-journal" role="tabpanel" hidden>
+    <h1 style="font-size:1.7rem">Journal</h1>
+    <p class="lead">A private place to record how you're doing, what happened today, or anything you want to remember.</p>
+    <div class="privacy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Saved only on this device — no account, nothing sent anywhere.</div>
+    <div class="card">
+      <label class="fl" for="jText">New entry</label>
+      <textarea id="jText" placeholder="Today I…"></textarea>
+      <div class="mt"><button class="btn btn-primary" onclick="addEntry()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Save entry</button></div>
+    </div>
+    <div class="section-h">Your entries</div>
+    <div class="stack" id="entries"></div>
+  </section>
+
+  <!-- GOALS -->
+  <section class="panel wrap" id="p-goals" role="tabpanel" hidden>
+    <h1 style="font-size:1.7rem">Goals</h1>
+    <p class="lead">Small steps count. Add something to work toward and check it off when it's done.</p>
+    <div class="card">
+      <label class="fl" for="gText">What do you want to work toward?</label>
+      <input type="text" id="gText" placeholder="e.g. Renew my health card">
+      <div class="row mt">
+        <div style="flex:2">
+          <label class="fl" for="gTerm">Timeframe</label>
+          <select id="gTerm">
+            <option value="Today">Today</option>
+            <option value="This week" selected>This week</option>
+            <option value="This month">This month</option>
+            <option value="Long term">Long term</option>
+          </select>
+        </div>
+        <div style="display:flex;align-items:flex-end;flex:1">
+          <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="addGoal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Add</button>
+        </div>
+      </div>
+    </div>
+    <div id="goalProgress"></div>
+    <div class="stack" id="goals"></div>
+  </section>
+
+  <!-- REMINDERS -->
+  <section class="panel wrap" id="p-reminders" role="tabpanel" hidden>
+    <h1 style="font-size:1.7rem">Reminders</h1>
+    <p class="lead">Keep track of appointments, deadlines, and places you need to be.</p>
+    <div class="card">
+      <label class="fl" for="rText">What's the reminder?</label>
+      <input type="text" id="rText" placeholder="e.g. Food bank — bring ID">
+      <div class="row mt">
+        <div><label class="fl" for="rDate">Date</label><input type="date" id="rDate"></div>
+        <div style="display:flex;align-items:flex-end"><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="addRem()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Add</button></div>
+      </div>
+    </div>
+    <div class="section-h">Upcoming</div>
+    <div class="stack" id="reminders"></div>
+  </section>
+
+  <!-- SUPPORT -->
+  <section class="panel wrap" id="p-support" role="tabpanel" hidden>
+    <h1 style="font-size:1.7rem">Support & crisis lines</h1>
+    <p class="lead">You are not alone. Every line below is free and confidential. Save the ones that matter to you.</p>
+    <div class="stack" id="supportList"></div>
+    <div class="note mt">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span>If you're in immediate danger, call <b>911</b>. If you're thinking about suicide or in emotional crisis, call or text <b>988</b> any time.</span>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <div>Built as a free, offline-first support tool. Not affiliated with any government agency.</div>
+  <div>Resource numbers verified Sept 2026. If a number has changed, dial <b>2-1-1</b> for a live directory of local services.</div>
+</div></footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+  // ---------- safe storage ----------
+  var mem={};
+  function load(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d;}catch(e){return mem[k]!==undefined?mem[k]:d;}}
+  function save(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){mem[k]=v;}}
+
+  // ---------- theme ----------
+  var root=document.documentElement, tb=document.getElementById('themeBtn');
+  var sun='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  var moon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  function sysDark(){return window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;}
+  function curDark(){var t=root.getAttribute('data-theme');return t?t==='dark':sysDark();}
+  function applyTheme(){tb.innerHTML=curDark()?sun:moon;}
+  var savedT=load('imh_theme',null); if(savedT){root.setAttribute('data-theme',savedT);} applyTheme();
+  tb.addEventListener('click',function(){var d=!curDark();root.setAttribute('data-theme',d?'dark':'light');save('imh_theme',d?'dark':'light');applyTheme();});
+
+  // ---------- toast ----------
+  var toastEl=document.getElementById('toast'),tt;
+  function toast(m){toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toastEl.classList.remove('show');},2200);}
+
+  // ---------- tabs ----------
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function go(name){
+    tabs.forEach(function(t){var on=t.dataset.tab===name;t.setAttribute('aria-selected',on);});
+    ['resources','journal','goals','reminders','support'].forEach(function(n){
+      document.getElementById('p-'+n).hidden=(n!==name);
+    });
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  window.go=go;
+  tabs.forEach(function(t){t.addEventListener('click',function(){go(t.dataset.tab);});});
+
+  // ---------- resource data ----------
+  var CATS=[
+    {id:'all',label:'All'},
+    {id:'shelter',label:'Shelter'},
+    {id:'food',label:'Food'},
+    {id:'health',label:'Health'},
+    {id:'income',label:'Income & ID'},
+    {id:'legal',label:'Legal'},
+    {id:'youth',label:'Youth'}
+  ];
+  var ic={
+    shelter:'<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>',
+    food:'<path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>',
+    health:'<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
+    income:'<rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>',
+    legal:'<path d="M12 3v18M5 7h14M6 7l-3 7a4 4 0 0 0 6 0zM18 7l-3 7a4 4 0 0 0 6 0z"/>',
+    youth:'<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>'
+  };
+  var RES=[
+    {cat:'shelter',tag:'Nationwide',name:'211 Shelter & Housing Line',desc:'Free, 24/7, multilingual help finding emergency shelter beds, drop-ins, and housing support in your area.',tel:'211',url:'https://211.ca'},
+    {cat:'shelter',tag:'Toronto example',name:'Central Intake (Toronto)',desc:'City line that matches you to an available shelter bed. Most cities have an equivalent — ask 211 for yours.',tel:'18773383398',url:'https://www.toronto.ca/community-people/housing-shelter/'},
+    {cat:'shelter',tag:'Women & children',name:'ShelterSafe',desc:'Map of violence-against-women shelters across Canada for anyone fleeing an unsafe home.',url:'https://www.sheltersafe.ca'},
+    {cat:'food',tag:'Nationwide',name:'Food Banks Canada',desc:'Find a food bank near you by postal code, plus what to bring and how first visits work.',url:'https://foodbankscanada.ca/find-a-food-bank/'},
+    {cat:'food',tag:'Local meals',name:'211 Food & Meal Programs',desc:'Community meals, food banks, and grocery help near you. Dial 2-1-1 and ask about free meals today.',tel:'211',url:'https://211.ca'},
+    {cat:'health',tag:'Ontario',name:'Health811',desc:'Free, confidential health advice from a registered nurse, 24/7. (In most provinces, dial 8-1-1.)',tel:'811',url:'https://health811.ontario.ca'},
+    {cat:'health',tag:'Nationwide',name:'Community Health Centres',desc:'Walk-in and no-cost clinics that serve people without a family doctor or health card. Ask 211 for the nearest one.',tel:'211',url:'https://211.ca'},
+    {cat:'income',tag:'Benefits',name:'Canada Benefits Finder',desc:'Answer a few questions to see federal, provincial, and local benefits you may qualify for.',url:'https://www.canada.ca/en/services/benefits/finder.html'},
+    {cat:'income',tag:'Ontario',name:'Ontario Works',desc:'Emergency financial assistance for food, rent, and essentials while you look for stable income.',url:'https://www.ontario.ca/page/apply-ontario-works'},
+    {cat:'income',tag:'ID',name:'Replace lost ID',desc:'Lost your ID? 211 can connect you to programs that help cover the cost of replacing health cards, birth certificates, and more.',tel:'211',url:'https://211.ca'},
+    {cat:'legal',tag:'Ontario',name:'Legal Aid Ontario',desc:'Free legal help for people with low income — housing, ID, benefits appeals, and more.',tel:'18006688258',url:'https://www.legalaid.on.ca'},
+    {cat:'youth',tag:'Under 30',name:'Kids Help Phone',desc:'Free 24/7 counselling and support by phone or text for young people. Text CONNECT to 686868.',tel:'18006686868',url:'https://kidshelpphone.ca'}
+  ];
+  var activeCat='all';
+  var chipsEl=document.getElementById('chips');
+  CATS.forEach(function(c){
+    var b=document.createElement('button');
+    b.className='chip';b.textContent=c.label;b.setAttribute('aria-pressed',c.id==='all');
+    b.addEventListener('click',function(){activeCat=c.id;[].forEach.call(chipsEl.children,function(x,i){x.setAttribute('aria-pressed',CATS[i].id===c.id);});renderRes();});
+    chipsEl.appendChild(b);
+  });
+  function svg(p){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+p+'</svg>';}
+  function fmtTel(t){ if(t==='211')return '2-1-1'; if(t==='811')return '8-1-1'; if(t==='988')return '988';
+    if(t.length===11&&t[0]==='1'){return '1-'+t.slice(1,4)+'-'+t.slice(4,7)+'-'+t.slice(7);} return t; }
+  var resGrid=document.getElementById('resGrid');
+  function renderRes(){
+    var list=RES.filter(function(r){return activeCat==='all'||r.cat===activeCat;});
+    resGrid.innerHTML=list.map(function(r){
+      var acts='';
+      if(r.tel)acts+='<a class="btn btn-primary" href="tel:'+r.tel+'">'+svg('<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>')+'Call '+fmtTel(r.tel)+'</a>';
+      if(r.url)acts+='<a class="btn btn-ghost" href="'+r.url+'" target="_blank" rel="noopener">'+svg('<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/>')+'Website</a>';
+      return '<article class="res'+(r.cat==='shelter'&&list.length%2?'':'')+'"><div class="res-top"><span class="cat-ic" aria-hidden="true">'+svg(ic[r.cat])+'</span><div><h3>'+r.name+'</h3><div class="tag">'+r.tag+'</div></div></div><p>'+r.desc+'</p><div class="res-actions">'+acts+'</div></article>';
+    }).join('');
+  }
+  renderRes();
+
+  // ---------- journal ----------
+  var entries=load('imh_journal',[]);
+  var entriesEl=document.getElementById('entries');
+  function esc(s){return s.replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function renderEntries(){
+    if(!entries.length){entriesEl.innerHTML='<div class="empty">No entries yet. Writing even one line can help you sort through a hard day.</div>';return;}
+    entriesEl.innerHTML=entries.map(function(e,i){
+      var d=new Date(e.t);
+      var ds=d.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})+' · '+d.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
+      return '<div class="entry"><div class="meta"><time>'+ds+'</time><button class="icon-btn" aria-label="Delete entry" onclick="delEntry('+i+')">'+svg('<path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>')+'</button></div><p>'+esc(e.text)+'</p></div>';
+    }).join('');
+  }
+  window.addEntry=function(){
+    var ta=document.getElementById('jText'),v=ta.value.trim();
+    if(!v){toast('Write something first');ta.focus();return;}
+    entries.unshift({text:v,t:Date.now()});save('imh_journal',entries);ta.value='';renderEntries();toast('Entry saved');
+  };
+  window.delEntry=function(i){entries.splice(i,1);save('imh_journal',entries);renderEntries();toast('Entry deleted');};
+  renderEntries();
+
+  // ---------- goals ----------
+  var goals=load('imh_goals',[]);
+  var goalsEl=document.getElementById('goals'),gp=document.getElementById('goalProgress');
+  var TERM_ORDER={'Today':0,'This week':1,'This month':2,'Long term':3};
+  function renderGoals(){
+    goals.sort(function(a,b){return (a.done-b.done)||((TERM_ORDER[a.term]||9)-(TERM_ORDER[b.term]||9));});
+    var done=goals.filter(function(g){return g.done;}).length;
+    gp.innerHTML=goals.length?'<div class="section-h">'+done+' of '+goals.length+' done</div>':'';
+    if(!goals.length){goalsEl.innerHTML='<div class="empty">No goals yet. Try starting with one small thing for today.</div>';return;}
+    goalsEl.innerHTML=goals.map(function(g,i){
+      return '<div class="goal'+(g.done?' done':'')+'"><button class="cb" role="checkbox" aria-checked="'+g.done+'" aria-label="Mark done" onclick="toggleGoal('+i+')">'+svg('<path d="M20 6L9 17l-5-5"/>')+'</button><div class="g-txt"><span>'+g.term+'</span><b>'+esc(g.text)+'</b></div><button class="icon-btn" aria-label="Delete goal" onclick="delGoal('+i+')">'+svg('<path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>')+'</button></div>';
+    }).join('');
+  }
+  window.addGoal=function(){
+    var t=document.getElementById('gText'),v=t.value.trim();
+    if(!v){toast('Type a goal first');t.focus();return;}
+    goals.push({text:v,term:document.getElementById('gTerm').value,done:false});save('imh_goals',goals);t.value='';renderGoals();toast('Goal added');
+  };
+  window.toggleGoal=function(i){goals[i].done=!goals[i].done;save('imh_goals',goals);renderGoals();};
+  window.delGoal=function(i){goals.splice(i,1);save('imh_goals',goals);renderGoals();toast('Goal removed');};
+  renderGoals();
+
+  // ---------- reminders ----------
+  var rems=load('imh_rems',[]);
+  var remsEl=document.getElementById('reminders');
+  function renderRems(){
+    rems.sort(function(a,b){return a.date<b.date?-1:1;});
+    var today=new Date();today.setHours(0,0,0,0);
+    if(!rems.length){remsEl.innerHTML='<div class="empty">No reminders yet. Add appointments or deadlines so they don\'t slip by.</div>';return;}
+    remsEl.innerHTML=rems.map(function(r,i){
+      var d=new Date(r.date+'T00:00:00');
+      var past=d<today;
+      var mo=d.toLocaleDateString(undefined,{month:'short'});
+      return '<div class="rem'+(past?' past':'')+'"><div class="d"><b>'+d.getDate()+'</b><span>'+mo+'</span></div><div class="r-txt"><b>'+esc(r.text)+'</b><span>'+d.toLocaleDateString(undefined,{weekday:'long',year:'numeric'})+(past?' · passed':'')+'</span></div><button class="icon-btn" aria-label="Delete reminder" onclick="delRem('+i+')">'+svg('<path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>')+'</button></div>';
+    }).join('');
+  }
+  window.addRem=function(){
+    var t=document.getElementById('rText'),dd=document.getElementById('rDate');
+    var v=t.value.trim();
+    if(!v){toast('Add a description first');t.focus();return;}
+    if(!dd.value){toast('Pick a date');dd.focus();return;}
+    rems.push({text:v,date:dd.value});save('imh_rems',rems);t.value='';dd.value='';renderRems();toast('Reminder added');
+  };
+  window.delRem=function(i){rems.splice(i,1);save('imh_rems',rems);renderRems();toast('Reminder deleted');};
+  renderRems();
+
+  // ---------- support list ----------
+  var SUP=[
+    {name:'Emergency',sub:'Immediate danger to life or safety',tel:'911',always:true},
+    {name:'9-8-8 Suicide Crisis Helpline',sub:'Call or text, 24/7, across Canada',tel:'988'},
+    {name:'211 — Community & social services',sub:'Shelter, food, income & local help, 24/7, multilingual',tel:'211'},
+    {name:'Kids Help Phone',sub:'Under 30 · call, or text CONNECT to 686868',tel:'18006686868'},
+    {name:'Hope for Wellness Helpline',sub:'Culturally grounded support for Indigenous peoples, 24/7',tel:'18552423310'},
+    {name:'Health811',sub:'Free health advice from a nurse (Ontario; dial 8-1-1 in most provinces)',tel:'811'}
+  ];
+  document.getElementById('supportList').innerHTML=SUP.map(function(s){
+    return '<a class="call" href="tel:'+s.tel+'"><span class="ic" aria-hidden="true">'+svg('<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>')+'</span><span class="t"><b>'+s.name+'</b><span>'+s.sub+'</span></span><span class="num">'+fmtTel(s.tel)+'</span></a>';
+  }).join('');
+})();
+</script>
+</body>
+</html>
