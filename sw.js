@@ -1,7 +1,7 @@
 /* Public app files only. Personal notes, goals and reminders never enter this cache. */
 "use strict";
 
-const OFFLINE_VERSION = "2026-11-05.2";
+const OFFLINE_VERSION = "2026-11-05.3";
 const APP_SCOPE = new URL(self.registration.scope);
 // Include the complete scope so copies on one origin cannot delete each other's cache.
 const CACHE_PREFIX = `my-support-plan:${APP_SCOPE.href}:shell:`;

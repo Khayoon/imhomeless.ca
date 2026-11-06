@@ -1,7 +1,7 @@
 /* Installation and honest offline-readiness feedback; no personal information is read. */
 (() => {
   "use strict";
-  const VERSION = "2026-11-05.2";
+  const VERSION = "2026-11-05.3";
   const scriptUrl = document.currentScript?.src || location.href;
   const appBase = new URL("./", scriptUrl);
   const words = {
