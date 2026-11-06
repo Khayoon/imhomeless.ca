@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "My support plan",
+  "short_name": "My plan",
+  "description": "Canadian support resources, notes, goals and reminders on this device.",
+  "lang": "en-CA",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f4ee",
+  "theme_color": "#174b43",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

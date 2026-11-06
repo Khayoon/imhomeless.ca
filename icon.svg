@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="My support plan">
+  <rect width="512" height="512" rx="112" fill="#174b43"/>
+  <path d="M116 140h96c25 0 44 12 44 30 0-18 19-30 44-30h96v244h-96c-25 0-44 12-44 30 0-18-19-30-44-30h-96z" fill="#f7f4ee"/>
+  <path d="M256 174v192" stroke="#174b43" stroke-width="12" stroke-linecap="round"/>
+  <path d="m154 250 28 28 52-62M294 218h58m-58 42h58m-58 42h42" fill="none" stroke="#174b43" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

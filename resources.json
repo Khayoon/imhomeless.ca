@@ -1,0 +1,1098 @@
+[
+  {
+    "id": "ca-211",
+    "category": "shelter",
+    "region": "CA",
+    "name": {
+      "en": "211 — local services",
+      "fr": "211 — services locaux"
+    },
+    "description": {
+      "en": "Choose your region to search for shelters, food and community services. Phone, text, chat and opening hours vary by provider.",
+      "fr": "Choisissez votre région pour chercher des refuges, de la nourriture et des services communautaires. Les horaires et les options téléphone, texto et clavardage varient."
+    },
+    "url": "https://211.ca/211-service-providers/",
+    "checked": "2026-11-05",
+    "source": "https://211.ca/",
+    "phone": "211"
+  },
+  {
+    "id": "ca-food-banks",
+    "category": "food",
+    "region": "CA",
+    "name": {
+      "en": "Find a food bank",
+      "fr": "Trouver une banque alimentaire"
+    },
+    "description": {
+      "en": "Search Food Banks Canada by location. Ask the local food bank about hours, registration and what to bring before travelling.",
+      "fr": "Cherchez par lieu dans le répertoire de Banques alimentaires Canada. Vérifiez les horaires, l'inscription et les documents à apporter avant de vous déplacer."
+    },
+    "url": "https://foodbankscanada.ca/find-a-food-bank/",
+    "checked": "2026-11-05",
+    "source": "https://foodbankscanada.ca/find-a-food-bank/"
+  },
+  {
+    "id": "ca-sheltersafe",
+    "category": "shelter",
+    "region": "CA",
+    "name": {
+      "en": "ShelterSafe — fleeing violence",
+      "fr": "Hébergement femmes — fuir la violence"
+    },
+    "description": {
+      "en": "Find shelters and support for women and their children experiencing violence. Contact a shelter to discuss safety and access; a bed is not guaranteed.",
+      "fr": "Trouvez un refuge et du soutien pour les femmes et leurs enfants vivant de la violence. Contactez le refuge pour connaître les possibilités; aucune place n'est garantie."
+    },
+    "url": "https://sheltersafe.ca/",
+    "checked": "2026-11-05",
+    "source": "https://sheltersafe.ca/"
+  },
+  {
+    "id": "ca-988",
+    "category": "health",
+    "region": "CA",
+    "name": {
+      "en": "9-8-8 Suicide Crisis Helpline",
+      "fr": "9-8-8 Ligne d'aide en cas de crise de suicide"
+    },
+    "description": {
+      "en": "Call or text any time, in English or French. Read the service's privacy and emergency-intervention information before contacting it if this concerns you.",
+      "fr": "Appelez ou textez à toute heure, en français ou en anglais. Consultez les renseignements sur la confidentialité et les interventions d'urgence si cela vous préoccupe."
+    },
+    "url": "https://988.ca/",
+    "checked": "2026-11-05",
+    "source": "https://988.ca/",
+    "phone": "988",
+    "sms": "988"
+  },
+  {
+    "id": "ca-kids-help",
+    "category": "health",
+    "region": "CA",
+    "name": {
+      "en": "Kids Help Phone",
+      "fr": "Jeunesse, J'écoute"
+    },
+    "description": {
+      "en": "For young people: call a counsellor, text CONNECT to 686868, or message a volunteer online. Check the site for live counselling chat hours.",
+      "fr": "Pour les jeunes : appelez un intervenant, textez PARLER au 686868 ou échangez avec un bénévole en ligne. Consultez les heures du clavardage avec un intervenant."
+    },
+    "url": "https://kidshelpphone.ca/urgent-help/",
+    "checked": "2026-11-05",
+    "source": "https://kidshelpphone.ca/urgent-help/",
+    "phone": "18006686868",
+    "sms": "686868",
+    "smsBody": {
+      "en": "CONNECT",
+      "fr": "PARLER"
+    },
+    "chat": "https://connect.crisistextlineca.org/",
+    "urlFr": "https://jeunessejecoute.ca/aide-urgente/"
+  },
+  {
+    "id": "ca-hope",
+    "category": "community",
+    "region": "CA",
+    "name": {
+      "en": "Hope for Wellness",
+      "fr": "Espoir pour le mieux-être"
+    },
+    "description": {
+      "en": "Phone and online support for Indigenous people across Canada, available 24/7. Ask about language options when connecting.",
+      "fr": "Soutien téléphonique et en ligne pour les Autochtones partout au Canada, offert en tout temps. Renseignez-vous sur les langues disponibles."
+    },
+    "url": "https://www.hopeforwellness.ca/",
+    "checked": "2026-11-05",
+    "source": "https://www.hopeforwellness.ca/",
+    "phone": "18552423310",
+    "chat": "https://www.hopeforwellness.ca/",
+    "urlFr": "https://www.espoirpourlemieuxetre.ca/"
+  },
+  {
+    "id": "ca-benefits",
+    "category": "income",
+    "region": "CA",
+    "name": {
+      "en": "Benefits Finder",
+      "fr": "Chercheur de prestations"
+    },
+    "description": {
+      "en": "Find federal benefits and government supports that may fit your situation. Check each program's eligibility and application rules.",
+      "fr": "Trouvez des prestations fédérales et des services gouvernementaux qui pourraient répondre à vos besoins. Vérifiez les critères et les démarches propres à chaque programme."
+    },
+    "url": "https://www.canada.ca/en/services/benefits/finder.html",
+    "checked": "2026-11-05",
+    "source": "https://www.canada.ca/en/services/benefits/finder.html"
+  },
+  {
+    "id": "ca-tax",
+    "category": "income",
+    "region": "CA",
+    "name": {
+      "en": "Free tax clinics",
+      "fr": "Comptoirs d'impôts gratuits"
+    },
+    "description": {
+      "en": "Find a volunteer tax clinic for people with a modest income and a simple tax situation. Filing may help you receive benefits and credits.",
+      "fr": "Trouvez un comptoir bénévole pour les personnes ayant un revenu modeste et une situation fiscale simple. Produire une déclaration peut donner accès à des prestations et crédits."
+    },
+    "url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/community-volunteer-income-tax-program.html",
+    "checked": "2026-11-05",
+    "source": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/community-volunteer-income-tax-program.html"
+  },
+  {
+    "id": "ca-sin",
+    "category": "income",
+    "region": "CA",
+    "name": {
+      "en": "Find or confirm a lost SIN",
+      "fr": "Retrouver ou confirmer un NAS perdu"
+    },
+    "description": {
+      "en": "Service Canada explains how to find your Social Insurance Number or request confirmation. Plastic SIN cards are no longer issued.",
+      "fr": "Service Canada explique comment retrouver votre numéro d'assurance sociale ou en demander une confirmation. Les cartes de NAS en plastique ne sont plus délivrées."
+    },
+    "url": "https://www.canada.ca/en/employment-social-development/services/sin/lost.html",
+    "checked": "2026-11-05",
+    "source": "https://www.canada.ca/en/employment-social-development/services/sin/lost.html"
+  },
+  {
+    "id": "ca-lost-id",
+    "category": "income",
+    "region": "CA",
+    "name": {
+      "en": "Lost or stolen identification",
+      "fr": "Pièces d'identité perdues ou volées"
+    },
+    "description": {
+      "en": "Contact the agency that issued each missing document for replacement steps. Ask a local outreach worker about help with documents, fees and a mailing address.",
+      "fr": "Contactez l'organisme qui a délivré chaque document pour le remplacer. Demandez à un intervenant local de l'aide pour les documents, les frais et une adresse postale."
+    },
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/carry-identification.html",
+    "checked": "2026-11-05",
+    "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/carry-identification.html"
+  },
+  {
+    "id": "ca-naloxone",
+    "category": "health",
+    "region": "CA",
+    "name": {
+      "en": "Find naloxone",
+      "fr": "Trouver de la naloxone"
+    },
+    "description": {
+      "en": "Official provincial and territorial links explain where to get take-home naloxone. Cost and eligibility vary; ask the provider about training.",
+      "fr": "Les liens officiels des provinces et territoires indiquent où obtenir de la naloxone à emporter. Les coûts et les critères varient; renseignez-vous sur la formation."
+    },
+    "url": "https://www.canada.ca/en/health-canada/services/opioids/naloxone.html",
+    "checked": "2026-11-05",
+    "source": "https://www.canada.ca/en/health-canada/services/opioids/naloxone.html"
+  },
+  {
+    "id": "ca-substance",
+    "category": "health",
+    "region": "CA",
+    "name": {
+      "en": "Substance use and harm reduction support",
+      "fr": "Soutien en consommation de substances et réduction des méfaits"
+    },
+    "description": {
+      "en": "Find regional treatment, harm reduction supplies and substance-use support. Service options and availability differ across Canada.",
+      "fr": "Trouvez du soutien régional, des traitements et du matériel de réduction des méfaits. Les services et leur disponibilité varient selon la région."
+    },
+    "url": "https://www.canada.ca/en/health-canada/services/substance-use/get-help-with-substance-use.html",
+    "checked": "2026-11-05",
+    "source": "https://www.canada.ca/en/health-canada/services/substance-use/get-help-with-substance-use.html"
+  },
+  {
+    "id": "ca-newcomers",
+    "category": "community",
+    "region": "CA",
+    "name": {
+      "en": "Find newcomer services",
+      "fr": "Trouver des services pour les nouveaux arrivants"
+    },
+    "description": {
+      "en": "Search the IRCC settlement-service locator for help with language, work and settling in. Eligibility varies; Quebec has its own settlement services.",
+      "fr": "Cherchez des services d'établissement dans le répertoire d'IRCC : langue, emploi et installation. L'admissibilité varie; le Québec offre ses propres services."
+    },
+    "url": "https://ircc.canada.ca/english/newcomers/services/index.asp",
+    "checked": "2026-11-05",
+    "source": "https://ircc.canada.ca/english/newcomers/services/index.asp"
+  },
+  {
+    "id": "ca-friendship",
+    "category": "community",
+    "region": "CA",
+    "name": {
+      "en": "Find a Friendship Centre",
+      "fr": "Trouver un centre d'amitié autochtone"
+    },
+    "description": {
+      "en": "Locate a Friendship Centre for urban Indigenous community connections and culturally grounded programs. Ask the centre which practical supports it offers.",
+      "fr": "Trouvez un centre d'amitié pour les Autochtones en milieu urbain et ses programmes ancrés dans la culture. Renseignez-vous sur l'aide pratique offerte localement."
+    },
+    "url": "https://nafc.ca/friendship-centres/find-a-friendship-centre?lang=en",
+    "checked": "2026-11-05",
+    "source": "https://nafc.ca/friendship-centres/find-a-friendship-centre?lang=en"
+  },
+  {
+    "id": "ca-pflag",
+    "category": "community",
+    "region": "CA",
+    "name": {
+      "en": "2SLGBTQ+ peer support — pflag",
+      "fr": "Soutien par les pairs 2ELGBTQ+ — pflag"
+    },
+    "description": {
+      "en": "Find local or online peer support for 2SLGBTQ+ people and their families. Volunteer chapters have different schedules; this is not an emergency service.",
+      "fr": "Trouvez du soutien local ou en ligne pour les personnes 2ELGBTQ+ et leurs proches. Les horaires des bénévoles varient; ce n'est pas un service d'urgence."
+    },
+    "url": "https://pflagcanada.ca/pflag-canada-chapters/",
+    "checked": "2026-11-05",
+    "source": "https://pflagcanada.ca/pflag-canada-chapters/",
+    "urlFr": "https://pflagcanada.ca/trouver-une-section/?lang=fr"
+  },
+  {
+    "id": "ca-veteran-housing",
+    "category": "housing",
+    "region": "CA",
+    "name": {
+      "en": "Housing support for Veterans",
+      "fr": "Soutien au logement pour les vétérans"
+    },
+    "description": {
+      "en": "Find community organizations supporting Veterans experiencing homelessness or at risk of losing housing. Contact the organization about local access.",
+      "fr": "Trouvez des organismes qui soutiennent les vétérans sans logement ou risquant de le perdre. Contactez l'organisme pour connaître l'accès aux services locaux."
+    },
+    "url": "https://www.veterans.gc.ca/en/housing-and-home-life/risk-housing-situation/understanding-veteran-homelessness/community-supports-veterans-experiencing-homelessness",
+    "checked": "2026-11-05",
+    "source": "https://www.veterans.gc.ca/en/housing-and-home-life/risk-housing-situation/understanding-veteran-homelessness/community-supports-veterans-experiencing-homelessness"
+  },
+  {
+    "id": "ca-veteran-emergency",
+    "category": "income",
+    "region": "CA",
+    "name": {
+      "en": "Veterans Emergency Fund",
+      "fr": "Fonds d'urgence pour les vétérans"
+    },
+    "description": {
+      "en": "Eligible Veterans and certain family members can apply for help with an urgent financial need, including essentials and shelter. Applications are assessed individually.",
+      "fr": "Les vétérans admissibles et certains proches peuvent demander de l'aide pour un besoin financier urgent, notamment les besoins essentiels et le logement. Chaque demande est évaluée."
+    },
+    "url": "https://www.veterans.gc.ca/en/housing-and-home-life/risk-housing-situation/emergency-funds/veterans-emergency-fund",
+    "checked": "2026-11-05",
+    "source": "https://www.veterans.gc.ca/en/housing-and-home-life/risk-housing-situation/emergency-funds/veterans-emergency-fund",
+    "phone": "18665222122"
+  },
+  {
+    "id": "ca-seniors",
+    "category": "income",
+    "region": "CA",
+    "name": {
+      "en": "Benefits and services for seniors",
+      "fr": "Prestations et services pour les aînés"
+    },
+    "description": {
+      "en": "Find public pensions, income supplements, caregiving and other supports. Check eligibility; tax filing can affect income-tested benefits.",
+      "fr": "Trouvez des pensions publiques, des suppléments de revenu et du soutien aux proches aidants. Vérifiez l'admissibilité; la déclaration fiscale peut influencer certaines prestations."
+    },
+    "url": "https://www.canada.ca/en/employment-social-development/campaigns/seniors.html",
+    "checked": "2026-11-05",
+    "source": "https://www.canada.ca/en/employment-social-development/campaigns/seniors.html"
+  },
+  {
+    "id": "ca-daily",
+    "category": "daily",
+    "region": "CA",
+    "name": {
+      "en": "Daily needs, warming and cooling places",
+      "fr": "Besoins quotidiens et lieux pour se réchauffer ou se rafraîchir"
+    },
+    "description": {
+      "en": "Use your regional 211 directory to search for warming or cooling centres, showers, laundry, washrooms, charging, mail and storage. Confirm hours and access locally.",
+      "fr": "Cherchez dans votre répertoire régional 211 : lieux chauffés ou climatisés, douches, buanderies, toilettes, recharge, courrier et consignes. Vérifiez les horaires et l'accès."
+    },
+    "url": "https://211.ca/211-service-providers/",
+    "checked": "2026-11-05",
+    "source": "https://211.ca/"
+  },
+  {
+    "id": "ca-rent-help",
+    "category": "housing",
+    "region": "CA",
+    "name": {
+      "en": "Help when you cannot pay rent",
+      "fr": "Aide lorsque vous ne pouvez pas payer le loyer"
+    },
+    "description": {
+      "en": "Learn about rent banks, community help and subsidized housing. Availability and eligibility vary; ask your municipality or a housing worker about local programs.",
+      "fr": "Renseignez-vous sur les banques d'aide au loyer, l'aide communautaire et les logements subventionnés. Les critères varient; contactez la municipalité ou un intervenant."
+    },
+    "url": "https://www.cmhc-schl.gc.ca/consumers/renting-a-home/i-am-renting/when-you-cant-pay-rent",
+    "checked": "2026-11-05",
+    "source": "https://www.cmhc-schl.gc.ca/consumers/renting-a-home/i-am-renting/when-you-cant-pay-rent",
+    "urlFr": "https://www.cmhc-schl.gc.ca/consommateurs/louer-un-logement/je-suis-locataire/lorsque-vous-navez-pas-les-moyens-de-payer-le-loyer"
+  },
+  {
+    "id": "ca-eviction",
+    "category": "housing",
+    "region": "CA",
+    "name": {
+      "en": "Facing eviction",
+      "fr": "Risque d'expulsion"
+    },
+    "description": {
+      "en": "Use CMHC's renting guide as a starting point, then contact your provincial or territorial rental authority or a legal clinic promptly. Local rules and deadlines apply.",
+      "fr": "Consultez le guide de la SCHL, puis contactez rapidement l'autorité locative de votre province ou territoire, ou une clinique juridique. Les règles et délais locaux s'appliquent."
+    },
+    "url": "https://www.cmhc-schl.gc.ca/consumers/renting-a-home/i-am-renting/compliants-evictions",
+    "checked": "2026-11-05",
+    "source": "https://www.cmhc-schl.gc.ca/consumers/renting-a-home/i-am-renting/compliants-evictions",
+    "urlFr": "https://www.cmhc-schl.gc.ca/consommateurs/louer-un-logement/je-suis-locataire/plaintes-et-expulsions"
+  },
+  {
+    "id": "ca-internet",
+    "category": "daily",
+    "region": "CA",
+    "name": {
+      "en": "Lower-cost internet and devices",
+      "fr": "Internet et appareils à moindre coût"
+    },
+    "description": {
+      "en": "Find federal digital-inclusion programs for eligible households. For Wi-Fi, computers or a phone today, ask a local library, community centre or drop-in about access.",
+      "fr": "Trouvez des programmes fédéraux d'accès numérique pour les ménages admissibles. Pour le Wi-Fi, un ordinateur ou un téléphone aujourd'hui, renseignez-vous auprès d'une bibliothèque ou d'un centre communautaire."
+    },
+    "url": "https://www.ised-isde.canada.ca/site/ised/en/digital-inclusion-programs-canadians",
+    "checked": "2026-11-05",
+    "source": "https://www.ised-isde.canada.ca/site/ised/en/digital-inclusion-programs-canadians"
+  },
+  {
+    "id": "bc-income",
+    "category": "income",
+    "region": "BC",
+    "name": {
+      "en": "Income assistance — British Columbia",
+      "fr": "Aide au revenu — Colombie-Britannique"
+    },
+    "description": {
+      "en": "Apply online, by phone or through a local office for help with basic needs. Eligibility is assessed.",
+      "fr": "Demandez en ligne, par téléphone ou dans un bureau de l'aide pour les besoins essentiels. L'admissibilité est évaluée."
+    },
+    "url": "https://www2.gov.bc.ca/gov/content/family-social-supports/income-assistance/apply-for-assistance",
+    "checked": "2026-11-05",
+    "source": "https://www2.gov.bc.ca/gov/content/family-social-supports/income-assistance/apply-for-assistance",
+    "phone": "18668660800"
+  },
+  {
+    "id": "bc-legal",
+    "category": "legal",
+    "region": "BC",
+    "name": {
+      "en": "Legal Aid BC",
+      "fr": "Aide juridique de la Colombie-Britannique"
+    },
+    "description": {
+      "en": "Check covered legal matters, financial eligibility and how to apply. Coverage and any contribution depend on the case.",
+      "fr": "Vérifiez les domaines couverts, l'admissibilité financière et les démarches. La couverture et toute contribution dépendent de la situation."
+    },
+    "url": "https://legalaid.bc.ca/",
+    "checked": "2026-11-05",
+    "source": "https://legalaid.bc.ca/"
+  },
+  {
+    "id": "bc-health",
+    "category": "health",
+    "region": "BC",
+    "name": {
+      "en": "HealthLink BC",
+      "fr": "HealthLink BC"
+    },
+    "description": {
+      "en": "Speak with a nurse about non-emergency health concerns and where to find care. Available 24 hours a day.",
+      "fr": "Parlez au personnel infirmier de problèmes de santé non urgents et des soins disponibles. Service offert en tout temps."
+    },
+    "url": "https://www.healthlinkbc.ca/",
+    "checked": "2026-11-05",
+    "source": "https://www.healthlinkbc.ca/",
+    "phone": "811"
+  },
+  {
+    "id": "ab-income",
+    "category": "income",
+    "region": "AB",
+    "name": {
+      "en": "Income Support — Alberta",
+      "fr": "Soutien au revenu — Alberta"
+    },
+    "description": {
+      "en": "Apply for help with basic living costs. The official page also links to emergency financial assistance.",
+      "fr": "Demandez de l'aide pour les besoins essentiels. La page officielle propose aussi un lien vers l'aide financière d'urgence."
+    },
+    "url": "https://www.alberta.ca/income-support",
+    "checked": "2026-11-05",
+    "source": "https://www.alberta.ca/income-support",
+    "phone": "18776449992"
+  },
+  {
+    "id": "ab-legal",
+    "category": "legal",
+    "region": "AB",
+    "name": {
+      "en": "Legal Aid Alberta",
+      "fr": "Aide juridique de l'Alberta"
+    },
+    "description": {
+      "en": "Check covered legal matters, financial eligibility and how to apply. Coverage and any contribution depend on the case.",
+      "fr": "Vérifiez les domaines couverts, l'admissibilité financière et les démarches. La couverture et toute contribution dépendent de la situation."
+    },
+    "url": "https://www.legalaid.ab.ca/",
+    "checked": "2026-11-05",
+    "source": "https://www.legalaid.ab.ca/"
+  },
+  {
+    "id": "ab-health",
+    "category": "health",
+    "region": "AB",
+    "name": {
+      "en": "Health Link 811",
+      "fr": "Health Link 811"
+    },
+    "description": {
+      "en": "Speak with a nurse about non-emergency health concerns and where to find care. Available 24 hours a day.",
+      "fr": "Parlez au personnel infirmier de problèmes de santé non urgents et des soins disponibles. Service offert en tout temps."
+    },
+    "url": "https://www.albertahealthservices.ca/assets/healthinfo/link/index.html",
+    "checked": "2026-11-05",
+    "source": "https://www.albertahealthservices.ca/assets/healthinfo/link/index.html",
+    "phone": "811"
+  },
+  {
+    "id": "sk-income",
+    "category": "income",
+    "region": "SK",
+    "name": {
+      "en": "Saskatchewan Income Support — Saskatchewan",
+      "fr": "Soutien au revenu de la Saskatchewan — Saskatchewan"
+    },
+    "description": {
+      "en": "Apply for income support online or by phone. A Social Services office can help with the application.",
+      "fr": "Demandez le soutien au revenu en ligne ou par téléphone. Un bureau des services sociaux peut vous aider à remplir la demande."
+    },
+    "url": "https://www.saskatchewan.ca/residents/family-and-social-support/financial-help/saskatchewan-income-support-sis",
+    "checked": "2026-11-05",
+    "source": "https://www.saskatchewan.ca/residents/family-and-social-support/financial-help/saskatchewan-income-support-sis",
+    "phone": "18662215200"
+  },
+  {
+    "id": "sk-legal",
+    "category": "legal",
+    "region": "SK",
+    "name": {
+      "en": "Legal Aid Saskatchewan",
+      "fr": "Aide juridique de la Saskatchewan"
+    },
+    "description": {
+      "en": "Check covered legal matters, financial eligibility and how to apply. Coverage and any contribution depend on the case.",
+      "fr": "Vérifiez les domaines couverts, l'admissibilité financière et les démarches. La couverture et toute contribution dépendent de la situation."
+    },
+    "url": "https://legalaid.sk.ca/",
+    "checked": "2026-11-05",
+    "source": "https://legalaid.sk.ca/"
+  },
+  {
+    "id": "sk-health",
+    "category": "health",
+    "region": "SK",
+    "name": {
+      "en": "HealthLine 811",
+      "fr": "HealthLine 811"
+    },
+    "description": {
+      "en": "Speak with a nurse about non-emergency health concerns and where to find care. Available 24 hours a day.",
+      "fr": "Parlez au personnel infirmier de problèmes de santé non urgents et des soins disponibles. Service offert en tout temps."
+    },
+    "url": "https://www.saskhealthauthority.ca/your-health/conditions-illnesses-services-wellness/all-z/healthline-8-1-1",
+    "checked": "2026-11-05",
+    "source": "https://www.saskhealthauthority.ca/your-health/conditions-illnesses-services-wellness/all-z/healthline-8-1-1",
+    "phone": "811"
+  },
+  {
+    "id": "mb-income",
+    "category": "income",
+    "region": "MB",
+    "name": {
+      "en": "Employment and Income Assistance — Manitoba",
+      "fr": "Aide à l'emploi et au revenu — Manitoba"
+    },
+    "description": {
+      "en": "Apply by phone or through a local office. An application also assesses help with housing costs through Rent Assist.",
+      "fr": "Présentez une demande par téléphone ou dans un bureau. L'évaluation porte aussi sur l'aide au logement du programme Allocation pour le loyer."
+    },
+    "url": "https://www.gov.mb.ca/fs/eia/apply.html",
+    "checked": "2026-11-05",
+    "source": "https://www.gov.mb.ca/fs/eia/apply.html"
+  },
+  {
+    "id": "mb-legal",
+    "category": "legal",
+    "region": "MB",
+    "name": {
+      "en": "Legal Aid Manitoba",
+      "fr": "Aide juridique du Manitoba"
+    },
+    "description": {
+      "en": "Check covered legal matters, financial eligibility and how to apply. Coverage and any contribution depend on the case.",
+      "fr": "Vérifiez les domaines couverts, l'admissibilité financière et les démarches. La couverture et toute contribution dépendent de la situation."
+    },
+    "url": "https://www.legalaid.mb.ca/",
+    "checked": "2026-11-05",
+    "source": "https://www.legalaid.mb.ca/"
+  },
+  {
+    "id": "mb-health",
+    "category": "health",
+    "region": "MB",
+    "name": {
+      "en": "Health Links — Info Santé",
+      "fr": "Health Links — Info Santé"
+    },
+    "description": {
+      "en": "Speak with a nurse about non-emergency health concerns and where to find care. Available 24 hours a day.",
+      "fr": "Parlez au personnel infirmier de problèmes de santé non urgents et des soins disponibles. Service offert en tout temps."
+    },
+    "url": "https://sharedhealthmb.ca/services/primary-care/my-health-team/my-health-team-faqs/",
+    "checked": "2026-11-05",
+    "source": "https://sharedhealthmb.ca/services/primary-care/my-health-team/my-health-team-faqs/",
+    "phone": "18883159257"
+  },
+  {
+    "id": "on-income",
+    "category": "income",
+    "region": "ON",
+    "name": {
+      "en": "Ontario Works — Ontario",
+      "fr": "Ontario au travail — Ontario"
+    },
+    "description": {
+      "en": "Apply online, by phone or through your local office for help with food, housing and other eligible needs.",
+      "fr": "Demandez en ligne, par téléphone ou dans un bureau de l'aide pour la nourriture, le logement et d'autres besoins admissibles."
+    },
+    "url": "https://www.ontario.ca/page/ontario-works",
+    "checked": "2026-11-05",
+    "source": "https://www.ontario.ca/page/ontario-works",
+    "phone": "18889991142"
+  },
+  {
+    "id": "on-legal",
+    "category": "legal",
+    "region": "ON",
+    "name": {
+      "en": "Legal Aid Ontario",
+      "fr": "Aide juridique Ontario"
+    },
+    "description": {
+      "en": "Check covered legal matters, financial eligibility and how to apply. Coverage and any contribution depend on the case.",
+      "fr": "Vérifiez les domaines couverts, l'admissibilité financière et les démarches. La couverture et toute contribution dépendent de la situation."
+    },
+    "url": "https://www.legalaid.on.ca/",
+    "checked": "2026-11-05",
+    "source": "https://www.legalaid.on.ca/"
+  },
+  {
+    "id": "on-health",
+    "category": "health",
+    "region": "ON",
+    "name": {
+      "en": "Health811",
+      "fr": "Santé811"
+    },
+    "description": {
+      "en": "Speak with a nurse about non-emergency health concerns and where to find care. Available 24 hours a day.",
+      "fr": "Parlez au personnel infirmier de problèmes de santé non urgents et des soins disponibles. Service offert en tout temps."
+    },
+    "url": "https://www.ontario.ca/page/your-health",
+    "checked": "2026-11-05",
+    "source": "https://www.ontario.ca/page/your-health",
+    "phone": "811",
+    "chat": "https://health811.ontario.ca/static/guest/chat-online"
+  },
+  {
+    "id": "qc-income",
+    "category": "income",
+    "region": "QC",
+    "name": {
+      "en": "Social assistance programs — Quebec",
+      "fr": "Programmes d'assistance sociale — Québec"
+    },
+    "description": {
+      "en": "Read about social assistance and social solidarity, and how to apply for last-resort financial assistance.",
+      "fr": "Renseignez-vous sur l'aide sociale, la solidarité sociale et la demande d'aide financière de dernier recours."
+    },
+    "url": "https://www.quebec.ca/en/family-and-support-for-individuals/social-assistance-programs-financial-assistance",
+    "checked": "2026-11-05",
+    "source": "https://www.quebec.ca/en/family-and-support-for-individuals/social-assistance-programs-financial-assistance"
+  },
+  {
+    "id": "qc-legal",
+    "category": "legal",
+    "region": "QC",
+    "name": {
+      "en": "Commission des services juridiques",
+      "fr": "Commission des services juridiques"
+    },
+    "description": {
+      "en": "Check covered legal matters, financial eligibility and how to apply. Coverage and any contribution depend on the case.",
+      "fr": "Vérifiez les domaines couverts, l'admissibilité financière et les démarches. La couverture et toute contribution dépendent de la situation."
+    },
+    "url": "https://www.csj.qc.ca/commission-des-services-juridiques/",
+    "checked": "2026-11-05",
+    "source": "https://www.csj.qc.ca/commission-des-services-juridiques/"
+  },
+  {
+    "id": "qc-health",
+    "category": "health",
+    "region": "QC",
+    "name": {
+      "en": "Info-Santé 811",
+      "fr": "Info-Santé 811"
+    },
+    "description": {
+      "en": "Dial 811, option 1, for non-urgent nurse advice. The service page lists exceptions for Nunavik and the Cree Territory of James Bay.",
+      "fr": "Composez le 811, option 1, pour des conseils infirmiers non urgents. La page signale des exceptions au Nunavik et aux Terres-Cries-de-la-Baie-James."
+    },
+    "url": "https://www.quebec.ca/en/health/finding-a-resource/info-sante-811",
+    "checked": "2026-11-05",
+    "source": "https://www.quebec.ca/en/health/finding-a-resource/info-sante-811",
+    "phone": "811"
+  },
+  {
+    "id": "nb-income",
+    "category": "income",
+    "region": "NB",
+    "name": {
+      "en": "Social Assistance — New Brunswick",
+      "fr": "Aide sociale — Nouveau-Brunswick"
+    },
+    "description": {
+      "en": "Learn how to apply to Social Development for help with basic needs. Household income and circumstances are assessed.",
+      "fr": "Découvrez comment demander au Développement social de l'aide pour les besoins essentiels. Les revenus et la situation du ménage sont évalués."
+    },
+    "url": "https://www2.gnb.ca/content/gnb/en/services/services_renderer.10295.html",
+    "checked": "2026-11-05",
+    "source": "https://www2.gnb.ca/content/gnb/en/services/services_renderer.10295.html"
+  },
+  {
+    "id": "nb-legal",
+    "category": "legal",
+    "region": "NB",
+    "name": {
+      "en": "New Brunswick Legal Aid",
+      "fr": "Aide juridique du Nouveau-Brunswick"
+    },
+    "description": {
+      "en": "Check covered legal matters, financial eligibility and how to apply. Coverage and any contribution depend on the case.",
+      "fr": "Vérifiez les domaines couverts, l'admissibilité financière et les démarches. La couverture et toute contribution dépendent de la situation."
+    },
+    "url": "https://www.legalaid-aidejuridique-nb.ca/",
+    "checked": "2026-11-05",
+    "source": "https://www.legalaid-aidejuridique-nb.ca/"
+  },
+  {
+    "id": "nb-health",
+    "category": "health",
+    "region": "NB",
+    "name": {
+      "en": "Tele-Care 811",
+      "fr": "Télé-Soins 811"
+    },
+    "description": {
+      "en": "Speak with a nurse about non-emergency health concerns and where to find care. Available 24 hours a day.",
+      "fr": "Parlez au personnel infirmier de problèmes de santé non urgents et des soins disponibles. Service offert en tout temps."
+    },
+    "url": "https://www.gnb.ca/en/topic/health-wellness/access-health-care/tele-care-811.html",
+    "checked": "2026-11-05",
+    "source": "https://www.gnb.ca/en/topic/health-wellness/access-health-care/tele-care-811.html",
+    "phone": "811"
+  },
+  {
+    "id": "ns-income",
+    "category": "income",
+    "region": "NS",
+    "name": {
+      "en": "Income Assistance — Nova Scotia",
+      "fr": "Aide au revenu — Nouvelle-Écosse"
+    },
+    "description": {
+      "en": "Call or contact a local office to apply. Tell the worker if you have no food, face losing housing or have another emergency.",
+      "fr": "Appelez ou contactez un bureau pour faire une demande. Signalez toute urgence : manque de nourriture, risque de perdre votre logement ou autre besoin urgent."
+    },
+    "url": "https://novascotia.ca/coms/employment/income_assistance/HowtoApply.html",
+    "checked": "2026-11-05",
+    "source": "https://novascotia.ca/coms/employment/income_assistance/HowtoApply.html",
+    "phone": "18774241177"
+  },
+  {
+    "id": "ns-legal",
+    "category": "legal",
+    "region": "NS",
+    "name": {
+      "en": "Nova Scotia Legal Aid",
+      "fr": "Aide juridique de la Nouvelle-Écosse"
+    },
+    "description": {
+      "en": "Check covered legal matters, financial eligibility and how to apply. Coverage and any contribution depend on the case.",
+      "fr": "Vérifiez les domaines couverts, l'admissibilité financière et les démarches. La couverture et toute contribution dépendent de la situation."
+    },
+    "url": "https://www.nslegalaid.ca/",
+    "checked": "2026-11-05",
+    "source": "https://www.nslegalaid.ca/"
+  },
+  {
+    "id": "ns-health",
+    "category": "health",
+    "region": "NS",
+    "name": {
+      "en": "811 — nurse advice",
+      "fr": "811 — conseils infirmiers"
+    },
+    "description": {
+      "en": "Speak with a nurse about non-emergency health concerns and where to find care. Available 24 hours a day.",
+      "fr": "Parlez au personnel infirmier de problèmes de santé non urgents et des soins disponibles. Service offert en tout temps."
+    },
+    "url": "https://811.novascotia.ca/",
+    "checked": "2026-11-05",
+    "source": "https://811.novascotia.ca/",
+    "phone": "811",
+    "chat": "https://811.novascotia.ca/"
+  },
+  {
+    "id": "pe-income",
+    "category": "income",
+    "region": "PE",
+    "name": {
+      "en": "Social Assistance — Prince Edward Island",
+      "fr": "Aide sociale — Île-du-Prince-Édouard"
+    },
+    "description": {
+      "en": "Call the screening line to begin an application for help with basic needs. An intake appointment determines eligibility.",
+      "fr": "Appelez la ligne d'évaluation pour demander de l'aide pour les besoins essentiels. Un rendez-vous permet d'évaluer l'admissibilité."
+    },
+    "url": "https://www.princeedwardisland.ca/en/information/social-development-and-seniors/social-assistance-program",
+    "checked": "2026-11-05",
+    "source": "https://www.princeedwardisland.ca/en/information/social-development-and-seniors/social-assistance-program",
+    "phone": "18775690546"
+  },
+  {
+    "id": "pe-legal",
+    "category": "legal",
+    "region": "PE",
+    "name": {
+      "en": "Prince Edward Island Legal Aid",
+      "fr": "Aide juridique de l'Île-du-Prince-Édouard"
+    },
+    "description": {
+      "en": "Check covered legal matters, financial eligibility and how to apply. Coverage and any contribution depend on the case.",
+      "fr": "Vérifiez les domaines couverts, l'admissibilité financière et les démarches. La couverture et toute contribution dépendent de la situation."
+    },
+    "url": "https://www.princeedwardisland.ca/en/information/justice-and-public-safety/legal-aid",
+    "checked": "2026-11-05",
+    "source": "https://www.princeedwardisland.ca/en/information/justice-and-public-safety/legal-aid"
+  },
+  {
+    "id": "pe-health",
+    "category": "health",
+    "region": "PE",
+    "name": {
+      "en": "811 Telehealth",
+      "fr": "Télé-Santé 811"
+    },
+    "description": {
+      "en": "Speak with a nurse about non-emergency health concerns and where to find care. Available 24 hours a day.",
+      "fr": "Parlez au personnel infirmier de problèmes de santé non urgents et des soins disponibles. Service offert en tout temps."
+    },
+    "url": "https://www.princeedwardisland.ca/en/information/health-and-wellness/811-telehealth",
+    "checked": "2026-11-05",
+    "source": "https://www.princeedwardisland.ca/en/information/health-and-wellness/811-telehealth",
+    "phone": "811"
+  },
+  {
+    "id": "nl-income",
+    "category": "income",
+    "region": "NL",
+    "name": {
+      "en": "Income Support — Newfoundland and Labrador",
+      "fr": "Soutien du revenu — Terre-Neuve-et-Labrador"
+    },
+    "description": {
+      "en": "Apply by phone or paper form for assistance with daily living costs. Financial and residency criteria apply.",
+      "fr": "Présentez une demande par téléphone ou formulaire papier pour les dépenses quotidiennes. Des critères financiers et de résidence s'appliquent."
+    },
+    "url": "https://www.gov.nl.ca/sswb/income-support/application/",
+    "checked": "2026-11-05",
+    "source": "https://www.gov.nl.ca/sswb/income-support/application/",
+    "phone": "18777297888"
+  },
+  {
+    "id": "nl-legal",
+    "category": "legal",
+    "region": "NL",
+    "name": {
+      "en": "Newfoundland and Labrador Legal Aid",
+      "fr": "Aide juridique de Terre-Neuve-et-Labrador"
+    },
+    "description": {
+      "en": "Check covered legal matters, financial eligibility and how to apply. Coverage and any contribution depend on the case.",
+      "fr": "Vérifiez les domaines couverts, l'admissibilité financière et les démarches. La couverture et toute contribution dépendent de la situation."
+    },
+    "url": "https://www.legalaid.nl.ca/",
+    "checked": "2026-11-05",
+    "source": "https://www.legalaid.nl.ca/"
+  },
+  {
+    "id": "nl-health",
+    "category": "health",
+    "region": "NL",
+    "name": {
+      "en": "811 HealthLine",
+      "fr": "Ligne Santé 811"
+    },
+    "description": {
+      "en": "Speak with a nurse about non-emergency health concerns and where to find care. Available 24 hours a day.",
+      "fr": "Parlez au personnel infirmier de problèmes de santé non urgents et des soins disponibles. Service offert en tout temps."
+    },
+    "url": "https://www.gov.nl.ca/hcs/findhealthservices/helplines/",
+    "checked": "2026-11-05",
+    "source": "https://www.gov.nl.ca/hcs/findhealthservices/helplines/",
+    "phone": "811"
+  },
+  {
+    "id": "yt-income",
+    "category": "income",
+    "region": "YT",
+    "name": {
+      "en": "Social Assistance — Yukon",
+      "fr": "Assistance sociale — Yukon"
+    },
+    "description": {
+      "en": "Book an intake appointment for help with basic living costs. If you have First Nation status, ask your First Nation or CIRNAC which program applies.",
+      "fr": "Prenez rendez-vous pour demander de l'aide aux besoins essentiels. Si vous avez le statut de Première Nation, renseignez-vous auprès de votre Première Nation ou de RCAANC."
+    },
+    "url": "https://yukon.ca/legal-and-social-supports/supports-adults-and-seniors/apply-social-assistance",
+    "checked": "2026-11-05",
+    "source": "https://yukon.ca/legal-and-social-supports/supports-adults-and-seniors/apply-social-assistance"
+  },
+  {
+    "id": "yt-legal",
+    "category": "legal",
+    "region": "YT",
+    "name": {
+      "en": "Yukon Legal Services Society",
+      "fr": "Société d'aide juridique du Yukon"
+    },
+    "description": {
+      "en": "Check covered legal matters, financial eligibility and how to apply. Coverage and any contribution depend on the case.",
+      "fr": "Vérifiez les domaines couverts, l'admissibilité financière et les démarches. La couverture et toute contribution dépendent de la situation."
+    },
+    "url": "https://www.yukonlegalaid.ca/about-us/",
+    "checked": "2026-11-05",
+    "source": "https://www.yukonlegalaid.ca/about-us/"
+  },
+  {
+    "id": "yt-health",
+    "category": "health",
+    "region": "YT",
+    "name": {
+      "en": "Yukon HealthLine 811",
+      "fr": "Ligne Info-santé du Yukon 811"
+    },
+    "description": {
+      "en": "Speak with a nurse about non-emergency health concerns and where to find care. Available 24 hours a day.",
+      "fr": "Parlez au personnel infirmier de problèmes de santé non urgents et des soins disponibles. Service offert en tout temps."
+    },
+    "url": "https://yukon.ca/en/811",
+    "checked": "2026-11-05",
+    "source": "https://yukon.ca/en/811",
+    "phone": "811"
+  },
+  {
+    "id": "nt-income",
+    "category": "income",
+    "region": "NT",
+    "name": {
+      "en": "Income Assistance — Northwest Territories",
+      "fr": "Aide au revenu — Territoires du Nord-Ouest"
+    },
+    "description": {
+      "en": "Apply through an ECE Service Centre for assistance with basic needs. A navigator can help complete the application.",
+      "fr": "Présentez une demande à un centre de services du MÉCF pour les besoins essentiels. Un agent peut vous aider à remplir la demande."
+    },
+    "url": "https://www.ece.gov.nt.ca/en/services/income-security-programs/income-assistance-program",
+    "checked": "2026-11-05",
+    "source": "https://www.ece.gov.nt.ca/en/services/income-security-programs/income-assistance-program"
+  },
+  {
+    "id": "nt-legal",
+    "category": "legal",
+    "region": "NT",
+    "name": {
+      "en": "NWT Legal Aid",
+      "fr": "Aide juridique des T.N.-O."
+    },
+    "description": {
+      "en": "Check covered legal matters, financial eligibility and how to apply. Coverage and any contribution depend on the case.",
+      "fr": "Vérifiez les domaines couverts, l'admissibilité financière et les démarches. La couverture et toute contribution dépendent de la situation."
+    },
+    "url": "https://www.justice.gov.nt.ca/en/legal-aid/",
+    "checked": "2026-11-05",
+    "source": "https://www.justice.gov.nt.ca/en/legal-aid/"
+  },
+  {
+    "id": "nt-health",
+    "category": "health",
+    "region": "NT",
+    "name": {
+      "en": "NWT 811",
+      "fr": "811 des T.N.-O."
+    },
+    "description": {
+      "en": "Speak with a nurse about non-emergency health concerns and where to find care. Available 24 hours a day.",
+      "fr": "Parlez au personnel infirmier de problèmes de santé non urgents et des soins disponibles. Service offert en tout temps."
+    },
+    "url": "https://www.hss.gov.nt.ca/en/services/811",
+    "checked": "2026-11-05",
+    "source": "https://www.hss.gov.nt.ca/en/services/811",
+    "phone": "811"
+  },
+  {
+    "id": "nu-income",
+    "category": "income",
+    "region": "NU",
+    "name": {
+      "en": "Income Assistance — Nunavut",
+      "fr": "Aide au revenu — Nunavut"
+    },
+    "description": {
+      "en": "Contact your community Income Assistance Worker to apply for help with basic needs. Financial eligibility is assessed.",
+      "fr": "Contactez l'agent d'aide au revenu de votre collectivité pour les besoins essentiels. L'admissibilité financière est évaluée."
+    },
+    "url": "https://www.gov.nu.ca/en/social-supports/income-assistance-program",
+    "checked": "2026-11-05",
+    "source": "https://www.gov.nu.ca/en/social-supports/income-assistance-program"
+  },
+  {
+    "id": "nu-legal",
+    "category": "legal",
+    "region": "NU",
+    "name": {
+      "en": "Nunavut Legal Aid",
+      "fr": "Aide juridique du Nunavut"
+    },
+    "description": {
+      "en": "Check covered legal matters, financial eligibility and how to apply. Coverage and any contribution depend on the case.",
+      "fr": "Vérifiez les domaines couverts, l'admissibilité financière et les démarches. La couverture et toute contribution dépendent de la situation."
+    },
+    "url": "https://nulegalaid.com/",
+    "checked": "2026-11-05",
+    "source": "https://nulegalaid.com/"
+  },
+  {
+    "id": "nu-health",
+    "category": "health",
+    "region": "NU",
+    "name": {
+      "en": "Community health-centre contacts",
+      "fr": "Coordonnées des centres de santé communautaires"
+    },
+    "description": {
+      "en": "Find the phone number for your community health centre in the Department of Health's nursing directory. Contact the centre directly for local advice and care.",
+      "fr": "Trouvez le numéro du centre de santé de votre collectivité dans le répertoire infirmier du ministère de la Santé. Contactez directement le centre pour obtenir des conseils et des soins."
+    },
+    "url": "https://nunavutnurses.ca/contact-us",
+    "checked": "2026-11-05",
+    "source": "https://www.gov.nu.ca/en/department-health/contact-health"
+  },
+  {
+    "id": "on-toronto-central-intake",
+    "category": "shelter",
+    "region": "ON",
+    "name": {
+      "en": "Toronto — Central Intake",
+      "fr": "Toronto — accueil centralisé"
+    },
+    "description": {
+      "en": "Toronto only: call the City's 24/7 line for referrals to emergency shelter and overnight accommodation. A suitable space may not be available on the first call.",
+      "fr": "À Toronto seulement : appelez le service municipal offert en tout temps pour une orientation vers un refuge ou un hébergement de nuit. Une place adaptée peut être indisponible."
+    },
+    "url": "https://www.toronto.ca/community-people/housing-shelter/homeless-help/central-intake/",
+    "phone": "18773383398",
+    "checked": "2026-11-05",
+    "source": "https://www.toronto.ca/community-people/housing-shelter/homeless-help/central-intake/"
+  },
+  {
+    "id": "on-toronto-warming",
+    "category": "daily",
+    "region": "ON",
+    "name": {
+      "en": "Toronto — warming centres",
+      "fr": "Toronto — centres de réchauffement"
+    },
+    "description": {
+      "en": "Toronto only: see the City's warming-centre locations and activation information. Walk-ins are welcome when centres are open. Check current openings before travelling; this directory does not show live status.",
+      "fr": "À Toronto seulement : consultez les lieux et les renseignements d'ouverture des centres de réchauffement municipaux. L'accès sans rendez-vous est possible lorsqu'ils sont ouverts. Vérifiez avant de partir; ce répertoire n'indique pas leur état en direct."
+    },
+    "url": "https://www.toronto.ca/community-people/housing-shelter/homeless-help/toronto-warming-centres/",
+    "checked": "2026-11-05",
+    "source": "https://www.toronto.ca/community-people/housing-shelter/homeless-help/toronto-warming-centres/"
+  },
+  {
+    "id": "on-toronto-cooling",
+    "category": "daily",
+    "region": "ON",
+    "name": {
+      "en": "Toronto — cool spaces",
+      "fr": "Toronto — lieux pour se rafraîchir"
+    },
+    "description": {
+      "en": "Toronto only: use the City's seasonal map of cool spaces. The map is maintained during heat season; check the current season, hours and access conditions before travelling.",
+      "fr": "À Toronto seulement : utilisez la carte saisonnière des lieux pour se rafraîchir. Elle est tenue à jour pendant la saison chaude; vérifiez la saison, les horaires et les conditions d'accès avant de partir."
+    },
+    "url": "https://www.toronto.ca/community-people/health-wellness-care/health-programs-advice/hot-weather/cool-spaces-near-you/",
+    "checked": "2026-11-05",
+    "source": "https://www.toronto.ca/community-people/health-wellness-care/health-programs-advice/hot-weather/cool-spaces-near-you/"
+  },
+  {
+    "id": "on-toronto-dropins",
+    "category": "daily",
+    "region": "ON",
+    "name": {
+      "en": "Toronto — drop-in programs",
+      "fr": "Toronto — centres de jour"
+    },
+    "description": {
+      "en": "Toronto only: find drop-ins that may offer meals, showers, laundry, healthcare and referrals. Services differ by location. Contact the provider to confirm hours and what is available.",
+      "fr": "À Toronto seulement : trouvez des centres de jour pouvant offrir repas, douches, buanderie, soins et orientation. Les services varient; contactez le centre pour confirmer les horaires et l'aide offerte."
+    },
+    "url": "https://www.toronto.ca/community-people/housing-shelter/homeless-help/drop-ins-homeless-help/",
+    "checked": "2026-11-05",
+    "source": "https://www.toronto.ca/community-people/housing-shelter/homeless-help/drop-ins-homeless-help/"
+  },
+  {
+    "id": "on-toronto-washrooms",
+    "category": "daily",
+    "region": "ON",
+    "name": {
+      "en": "Toronto — public washrooms and drinking water",
+      "fr": "Toronto — toilettes publiques et eau potable"
+    },
+    "description": {
+      "en": "Toronto only: search the City's washroom and drinking-water map, including listed accessibility features. Check each location's status and opening hours.",
+      "fr": "À Toronto seulement : consultez la carte municipale des toilettes et de l'eau potable, avec les caractéristiques d'accessibilité indiquées. Vérifiez l'état et les heures de chaque lieu."
+    },
+    "url": "https://www.toronto.ca/services-payments/venues-facilities-bookings/booking-city-facilities/washrooms-drinking-water-map/",
+    "checked": "2026-11-05",
+    "source": "https://www.toronto.ca/services-payments/venues-facilities-bookings/booking-city-facilities/washrooms-drinking-water-map/"
+  }
+]

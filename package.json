@@ -1,0 +1,11 @@
+{
+  "name": "my-support-plan",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Buildless bilingual Canadian support directory and browser-local personal tools",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:test-copy": "node build.mjs --test",
+    "test": "node --test tests/offline.test.js tests/personal.test.js tests/site.test.js"
+  }
+}
